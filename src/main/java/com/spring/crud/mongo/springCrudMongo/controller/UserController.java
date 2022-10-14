@@ -1,8 +1,6 @@
 package com.spring.crud.mongo.springCrudMongo.controller;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.spring.crud.mongo.springCrudMongo.model.User;
-import com.spring.crud.mongo.springCrudMongo.model.UserDTO;
 import com.spring.crud.mongo.springCrudMongo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -29,8 +27,6 @@ public class UserController {
     public List<User> getAllUsers(){
         return service.findAllUsers();
     }
-
-
 
     @PostMapping("/saveUser")
     public ResponseEntity<?> saveUser(@RequestBody User user){
