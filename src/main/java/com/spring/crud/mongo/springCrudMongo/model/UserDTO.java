@@ -1,26 +1,21 @@
 package com.spring.crud.mongo.springCrudMongo.model;
 
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
-
 import java.util.List;
 
-// using for database related mapping
-@Document(collection = "user")
-public class User {
+// for communication of controller
+public class UserDTO {
 
-    @Id
     private String id;
     private String name;
     private int age;
     private List<Integer> finished;
     private List<String> badges;
 
-    public User(){
+    public UserDTO(){
 
     }
 
-    public User(String id, String name, int age, List<Integer> finished, List<String> badges) {
+    public UserDTO(String id, String name, int age, List<Integer> finished, List<String> badges) {
         this.id = id;
         this.name = name;
         this.age = age;
@@ -68,14 +63,4 @@ public class User {
         this.badges = badges;
     }
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", age=" + age +
-                ", finished=" + finished +
-                ", badges=" + badges +
-                '}';
-    }
 }

@@ -8,9 +8,8 @@ import java.util.List;
 import java.util.UUID;
 
 @Repository
-public interface UserRepository extends MongoRepository<User, UUID> {
+public interface UserRepository extends MongoRepository<User, String> {
 
     List<User> findByName(String name);
 
-    User findById(int id);
 }
