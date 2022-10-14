@@ -13,19 +13,13 @@ public class User {
     private String id;
     private String name;
     private int age;
+    private String privileges;
     private List<Integer> finished;
     private List<String> badges;
 
+
     public User(){
 
-    }
-
-    public User(String id, String name, int age, List<Integer> finished, List<String> badges) {
-        this.id = id;
-        this.name = name;
-        this.age = age;
-        this.finished = finished;
-        this.badges = badges;
     }
 
     public String getId() {
@@ -52,6 +46,14 @@ public class User {
         this.age = age;
     }
 
+    public String getPrivileges() {
+        return privileges;
+    }
+
+    public void setPrivileges(String privileges) {
+        this.privileges = privileges;
+    }
+
     public List<Integer> getFinished() {
         return finished;
     }
@@ -71,9 +73,10 @@ public class User {
     @Override
     public String toString() {
         return "User{" +
-                "id=" + id +
+                "id='" + id + '\'' +
                 ", name='" + name + '\'' +
                 ", age=" + age +
+                ", privileges='" + privileges + '\'' +
                 ", finished=" + finished +
                 ", badges=" + badges +
                 '}';
