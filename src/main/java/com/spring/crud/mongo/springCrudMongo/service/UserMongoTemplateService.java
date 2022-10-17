@@ -14,4 +14,6 @@ public interface UserMongoTemplateService {
     List<User> query2();
 
     List<User> query3();
+
+    List<?> query4();
 }

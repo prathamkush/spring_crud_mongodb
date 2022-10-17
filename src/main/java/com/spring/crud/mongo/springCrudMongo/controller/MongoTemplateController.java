@@ -43,4 +43,9 @@ public class MongoTemplateController {
     public ResponseEntity<?> query3(){
         return ResponseEntity.ok().body(mongoTemplateServiceImplementation.query3());
     }
+
+    @GetMapping("/query4")
+    public ResponseEntity<?> query4(){
+        return ResponseEntity.ok().body(mongoTemplateServiceImplementation.query4());
+    }
 }

@@ -1,7 +1,6 @@
 package com.spring.crud.mongo.springCrudMongo.repository;
 
 import com.spring.crud.mongo.springCrudMongo.model.User;
-import jdk.nashorn.internal.runtime.regexp.joni.Regex;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.mongodb.core.MongoTemplate;
@@ -84,14 +83,24 @@ public class UserMongoTemplateRepository {
 
         final List<Criteria> criteria = new ArrayList<>();
 
-
-        criteria.add(Criteria.where("privilege").regex(".*min.*"));
+        String reg = ".*min.*";
+        criteria.add(Criteria.where("privileges").regex(reg));
 
         if(!criteria.isEmpty()) query.addCriteria(new Criteria()
                 .andOperator(criteria.toArray(new Criteria[criteria.size()])));
 
         return mongoTemplate.find(query, User.class);
     }
+
+    // query 4
+    public List<?> query4(){
+
+        return  mongoTemplate.query(User.class)
+                .distinct("points.points")
+                .all();
+    }
+
+    // query 5
 
 
 

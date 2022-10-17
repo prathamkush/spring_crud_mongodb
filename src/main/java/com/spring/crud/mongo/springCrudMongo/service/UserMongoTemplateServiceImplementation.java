@@ -41,4 +41,9 @@ public class UserMongoTemplateServiceImplementation implements UserMongoTemplate
     public List<User> query3() {
         return mongoTemplateRepository.query3();
     }
+
+    @Override
+    public List<?> query4() {
+        return mongoTemplateRepository.query4();
+    }
 }
