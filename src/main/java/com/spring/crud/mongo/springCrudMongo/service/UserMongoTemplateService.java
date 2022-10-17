@@ -8,4 +8,10 @@ import java.util.List;
 public interface UserMongoTemplateService {
 
     List<User> findUserByField(String id, String name, int age, String privilege, int page);
+
+    List<User> findByName(String name);
+
+    List<User> query2();
+
+    List<User> query3();
 }

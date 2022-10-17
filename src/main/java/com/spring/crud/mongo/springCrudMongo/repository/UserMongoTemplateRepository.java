@@ -1,6 +1,7 @@
 package com.spring.crud.mongo.springCrudMongo.repository;
 
 import com.spring.crud.mongo.springCrudMongo.model.User;
+import jdk.nashorn.internal.runtime.regexp.joni.Regex;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.mongodb.core.MongoTemplate;
@@ -48,12 +49,52 @@ public class UserMongoTemplateRepository {
 
     }
 
-    // query 1 : findByName
-//    public List<User> findByName(String name, Pageable pageable){
-//        final Query query = new Query().with(pageable);
-//
-//
-//    }
+//     query 1 : findByName
+    public List<User> findByName(String name){
+        final Query query = new Query();
+
+        final List<Criteria> criteria = new ArrayList<>();
+
+        if(name!=null && !name.isEmpty()){
+            criteria.add(Criteria.where("name").is(name));
+        }
+
+        if(!criteria.isEmpty()) query.addCriteria(new Criteria()
+                .andOperator(criteria.toArray(new Criteria[criteria.size()])));
+
+        return mongoTemplate.find(query,User.class);
+
+    }
+
+
+    // query 2
+    public List<User> query2(){
+        final Query query = new Query();
+
+        query.fields().include("name").include("age").include("phone.personal").include("phone.work");
+
+        return mongoTemplate.find(query,User.class);
+    }
+    
+    // query 3
+
+    public List<User> query3(){
+
+        final Query query = new Query();
+
+        final List<Criteria> criteria = new ArrayList<>();
+
+
+        criteria.add(Criteria.where("privilege").regex(".*min.*"));
+
+        if(!criteria.isEmpty()) query.addCriteria(new Criteria()
+                .andOperator(criteria.toArray(new Criteria[criteria.size()])));
+
+        return mongoTemplate.find(query, User.class);
+    }
+
+
+
 
 
 

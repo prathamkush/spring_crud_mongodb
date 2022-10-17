@@ -26,4 +26,19 @@ public class UserMongoTemplateServiceImplementation implements UserMongoTemplate
     public List<User> findUserByField(String id, String name, int age, String privilege, int page) {
         return mongoTemplateRepository.findUserByField(id, name, age, privilege, PageRequest.of(page,1));
     }
+
+    @Override
+    public List<User> findByName(String name) {
+        return mongoTemplateRepository.findByName(name);
+    }
+
+    @Override
+    public List<User> query2() {
+        return mongoTemplateRepository.query2();
+    }
+
+    @Override
+    public List<User> query3() {
+        return mongoTemplateRepository.query3();
+    }
 }
