@@ -33,10 +33,10 @@ public class UserQueryController {
         return queryService.getQuery3();
     }
 
-    @GetMapping("/getQuery5")
-    public String getQuery5() {
-        return queryService.getQuery5();
-    }
+//    @GetMapping("/getQuery5")
+//    public String getQuery5() {
+//        return queryService.getQuery5();
+//    }
 
 
 

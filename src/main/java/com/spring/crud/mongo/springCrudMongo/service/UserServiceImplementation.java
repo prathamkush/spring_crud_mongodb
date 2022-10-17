@@ -17,6 +17,8 @@ public class UserServiceImplementation implements UserService{
         this.userRepository = userRepository;
     }
 
+
+
     @Override
     public List<User> findByName(String name) {
         return userRepository.findByName(name);
@@ -85,6 +87,8 @@ public class UserServiceImplementation implements UserService{
     public List<User> showEmbeddedPhone() {
         return userRepository.showEmbeddedPhone();
     }
+
+
 
 
 }

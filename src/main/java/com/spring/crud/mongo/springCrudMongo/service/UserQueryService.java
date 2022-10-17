@@ -11,7 +11,7 @@ public interface UserQueryService {
 
     List<User> getQuery3();
 
-    String getQuery5();
+//    String getQuery5();
 
 
 

@@ -14,7 +14,6 @@ import java.util.Objects;
 @Repository
 public interface UserQueryRepository extends MongoRepository<User, String> {
 
-
     // 1. Write a query to find the person whose name is 'Steve'
     @Query("{name:\"Steve\"}")
     List<User> getQuery1();

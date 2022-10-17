@@ -34,8 +34,8 @@ public class UserQueryServiceImplementation implements UserQueryService {
         return queryRepository.getQuery3();
     }
 
-    @Override
-    public String getQuery5() {
-        return queryRepository.getQuery5();
-    }
+//    @Override
+//    public String getQuery5() {
+//        return queryRepository.getQuery5();
+//    }
 }
