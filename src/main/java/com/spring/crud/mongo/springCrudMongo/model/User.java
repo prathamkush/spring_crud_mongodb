@@ -20,7 +20,15 @@ public class User {
 
 
     // phone
+    private Phone phone;
 
+    public Phone getPhone() {
+        return phone;
+    }
+
+    public void setPhone(Phone phone) {
+        this.phone = phone;
+    }
 
     public User(){
 
@@ -85,4 +93,45 @@ public class User {
                 ", badges=" + badges +
                 '}';
     }
+}
+
+class Phone{
+
+    private String personal;
+    private String work;
+    private String ext;
+
+    public Phone(String personal, String work, String ext) {
+        this.personal = personal;
+        this.work = work;
+        this.ext = ext;
+    }
+
+    public String getPersonal() {
+        return personal;
+    }
+
+    public void setPersonal(String personal) {
+        this.personal = personal;
+    }
+
+    public String getWork() {
+        return work;
+    }
+
+    public void setWork(String work) {
+        this.work = work;
+    }
+
+    public String getExt() {
+        return ext;
+    }
+
+    public void setExt(String ext) {
+        this.ext = ext;
+    }
+}
+
+class Points {
+
 }

@@ -42,6 +42,9 @@ public interface UserRepository extends MongoRepository<User, String> {
     List<User> regexQuery();
 
 
+    @Query(value = "{}", fields = "{name:1, age:1, 'phone.personal':1, 'phone.work':1}")
+    List<User> showEmbeddedPhone();
+
 
 
 }

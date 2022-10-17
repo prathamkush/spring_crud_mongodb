@@ -81,5 +81,10 @@ public class UserServiceImplementation implements UserService{
         return userRepository.regexQuery();
     }
 
+    @Override
+    public List<User> showEmbeddedPhone() {
+        return userRepository.showEmbeddedPhone();
+    }
+
 
 }

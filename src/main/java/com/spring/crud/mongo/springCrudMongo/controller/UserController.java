@@ -92,4 +92,9 @@ public class UserController {
         return service.regexQuery();
     }
 
+    @GetMapping("/showEmbeddedPhone")
+    public List<User> showEmbeddedPhone() {
+        return service.showEmbeddedPhone();
+    }
+
 }

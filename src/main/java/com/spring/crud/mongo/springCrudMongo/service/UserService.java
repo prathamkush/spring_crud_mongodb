@@ -31,4 +31,6 @@ public interface UserService {
     List<User> sortQuery(String privileges);
 
     List<User> regexQuery();
+
+    List<User> showEmbeddedPhone();
 }
