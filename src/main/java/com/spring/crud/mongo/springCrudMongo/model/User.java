@@ -18,17 +18,17 @@ public class User {
     private List<Integer> finished;
     private List<String> badges;
 
-
     // phone
     private Phone phone;
 
-    public Phone getPhone() {
-        return phone;
-    }
 
-    public void setPhone(Phone phone) {
-        this.phone = phone;
-    }
+    // Points
+    private List<Points> points;
+
+    //Favorites
+    private Favorites favorites;
+
+
 
     public User(){
 
@@ -82,6 +82,30 @@ public class User {
         this.badges = badges;
     }
 
+    public Phone getPhone() {
+        return phone;
+    }
+
+    public void setPhone(Phone phone) {
+        this.phone = phone;
+    }
+
+    public List<Points> getPoints() {
+        return points;
+    }
+
+    public void setPoints(List<Points> points) {
+        this.points = points;
+    }
+
+    public Favorites getFavorites() {
+        return favorites;
+    }
+
+    public void setFavorites(Favorites favorites) {
+        this.favorites = favorites;
+    }
+
     @Override
     public String toString() {
         return "User{" +
@@ -91,6 +115,9 @@ public class User {
                 ", privileges='" + privileges + '\'' +
                 ", finished=" + finished +
                 ", badges=" + badges +
+                ", phone=" + phone +
+                ", points=" + points +
+                ", favorites=" + favorites +
                 '}';
     }
 }
@@ -134,6 +161,54 @@ class Phone{
 
 class Points {
 
+    private int points;
+    private int bonus;
 
+    public Points(int points, int bonus) {
+        this.points = points;
+        this.bonus = bonus;
+    }
 
+    public int getPoints() {
+        return points;
+    }
+
+    public void setPoints(int points) {
+        this.points = points;
+    }
+
+    public int getBonus() {
+        return bonus;
+    }
+
+    public void setBonus(int bonus) {
+        this.bonus = bonus;
+    }
+}
+
+class Favorites{
+
+    private String artist;
+    private String food;
+
+    public Favorites(String artist, String food) {
+        this.artist = artist;
+        this.food = food;
+    }
+
+    public String getArtist() {
+        return artist;
+    }
+
+    public void setArtist(String artist) {
+        this.artist = artist;
+    }
+
+    public String getFood() {
+        return food;
+    }
+
+    public void setFood(String food) {
+        this.food = food;
+    }
 }
