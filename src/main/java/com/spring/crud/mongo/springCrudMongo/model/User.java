@@ -4,6 +4,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.List;
+import java.util.Objects;
 
 // using for database related mapping
 @Document(collection = "user")
@@ -16,6 +17,9 @@ public class User {
     private String privileges;
     private List<Integer> finished;
     private List<String> badges;
+
+
+    // phone
 
 
     public User(){

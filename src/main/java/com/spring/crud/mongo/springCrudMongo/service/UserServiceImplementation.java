@@ -52,4 +52,34 @@ public class UserServiceImplementation implements UserService{
     public void deleteAllUsers(){
         userRepository.deleteAll();
     }
+
+
+    //--------Queries----------------------//
+
+    @Override
+    public User getByIdQuery(String id){
+        return userRepository.getByIdQuery(id);
+    }
+
+    @Override
+    public List<User> getAndQuery(String privileges, String name) {
+       return userRepository.getAndQuery(privileges, name);
+    }
+
+    @Override
+    public Integer countQuery(String privileges) {
+        return userRepository.countQuery(privileges);
+    }
+
+    @Override
+    public List<User> sortQuery(String privileges) {
+        return userRepository.sortQuery(privileges);
+    }
+
+    @Override
+    public List<User> regexQuery() {
+        return userRepository.regexQuery();
+    }
+
+
 }

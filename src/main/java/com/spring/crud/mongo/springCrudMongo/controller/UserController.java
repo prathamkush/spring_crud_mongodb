@@ -3,12 +3,14 @@ package com.spring.crud.mongo.springCrudMongo.controller;
 import com.spring.crud.mongo.springCrudMongo.model.User;
 import com.spring.crud.mongo.springCrudMongo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.core.aggregation.ArrayOperators;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 
 import java.util.List;
+import java.util.Map;
 
 
 @RestController
@@ -61,6 +63,33 @@ public class UserController {
     }
 
 
+    //------------------Queries---------------------//
 
+    @PostMapping("/getByIdQuery")
+    public User getByIdQuery(@RequestBody String id){
+        return service.getByIdQuery(id);
+    }
+
+
+    @PostMapping("/getAndQuery")
+    public List<User> getAndQuery(@RequestBody Map<String, Object> obj ) {
+        //return service.getAndQuery(privileges,name);
+        return service.getAndQuery(obj.get("privileges").toString(),obj.get("name").toString());
+    }
+
+    @PostMapping("/countQuery")
+    public Integer countQuery(@RequestBody Map<String, Object> obj){
+        return service.countQuery(obj.get("privileges").toString());
+    }
+
+    @GetMapping("/sortQuery/{privileges}")
+    List<User> sortQuery(@PathVariable("privileges") String privileges){
+        return service.sortQuery(privileges);
+    }
+
+    @GetMapping("/regexQuery")
+    public List<User> regexQuery() {
+        return service.regexQuery();
+    }
 
 }
